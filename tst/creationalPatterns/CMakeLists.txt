@@ -1,3 +1,17 @@
+## Version: $Id$
+##
+######################################################################
+##
+### Commentary:
+##
+######################################################################
+##
+### Change Log:
+##
+######################################################################
+##
+### Code:
+
 project(creationalPatternsTest)
 
 ## ###################################################################
@@ -5,10 +19,6 @@ project(creationalPatternsTest)
 ## ###################################################################
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
-
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 ## ###################################################################
 ## Input
@@ -36,7 +46,7 @@ add_executable(
 qt5_use_modules(${PROJECT_NAME} Core)
 qt5_use_modules(${PROJECT_NAME} Test)
 
-target_link_libraries(${PROJECT_NAME})
+target_link_libraries(${PROJECT_NAME} cppPatterns)
 
 ## ###################################################################
 ## Test rules

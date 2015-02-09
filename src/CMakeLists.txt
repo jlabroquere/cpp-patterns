@@ -18,11 +18,10 @@
 ## #################################################################
 
 set(${PROJECT_NAME}_HEADERS
-    cdpAbstractFactory.h)
-
+    cppAbstractFactory.h)
 
 set(${PROJECT_NAME}_SOURCES
-    cdpAbstractFactory.cpp)
+    cppAbstractFactory.cpp)
 
 ## #################################################################
 ## Build rules
@@ -30,7 +29,7 @@ set(${PROJECT_NAME}_SOURCES
 
 add_library(${PROJECT_NAME} SHARED
     ${${PROJECT_NAME}_SOURCES}
-${${PROJECT_NAME}_HEADERS})
+    ${${PROJECT_NAME}_HEADERS})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES MACOSX_RPATH 0)
 set_target_properties(${PROJECT_NAME} PROPERTIES INSTALL_NAME_DIR "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}")
@@ -49,16 +48,16 @@ qt5_use_modules(${PROJECT_NAME} Core)
 add_compiler_export_flags()
 
 generate_export_header(${PROJECT_NAME}
-EXPORT_FILE_NAME "${PROJECT_NAME}Export.h")
+    EXPORT_FILE_NAME "${PROJECT_NAME}Export.h")
 
 add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
     COMMAND ${CMAKE_COMMAND} ARGS -E copy_if_different "${${PROJECT_NAME}_BINARY_DIR}/src/${PROJECT_NAME}Export.h" "${CMAKE_BINARY_DIR}"
-COMMAND ${CMAKE_COMMAND} ARGS -E copy_if_different "${${PROJECT_NAME}_BINARY_DIR}/src/${PROJECT_NAME}Export.h" "${CMAKE_BINARY_DIR}/${PROJECT_NAME}Export")
+    COMMAND ${CMAKE_COMMAND} ARGS -E copy_if_different "${${PROJECT_NAME}_BINARY_DIR}/src/${PROJECT_NAME}Export.h" "${CMAKE_BINARY_DIR}/${PROJECT_NAME}Export")
 
 set(${PROJECT_NAME}_HEADERS
     ${${PROJECT_NAME}_HEADERS}
     "${CMAKE_BINARY_DIR}/${PROJECT_NAME}Export"
-"${CMAKE_BINARY_DIR}/${PROJECT_NAME}Export.h")
+    "${CMAKE_BINARY_DIR}/${PROJECT_NAME}Export.h")
 
 ## ###################################################################
 ## Install rules - files
