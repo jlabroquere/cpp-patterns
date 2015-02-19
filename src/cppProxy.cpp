@@ -1,0 +1,24 @@
+// Version: $Id: $
+//
+//
+
+// Commentary:
+//
+//
+
+// Change Log:
+//
+//
+
+// Code:
+
+#include "cppProxy.h"
+
+// /////////////////////////////////////////////////////////////////
+// cppObjects Implementation
+// /////////////////////////////////////////////////////////////////
+
+QString cppProxyObject::description(void)
+{
+    return "I am real object";
+}

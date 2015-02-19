@@ -33,7 +33,7 @@ public:
     explicit cppAbstractFactory(void) {;}
 
 public:
-    virtual ~cppAbstractFactory(void) {;};
+    virtual ~cppAbstractFactory(void) {;}
 
 public:
     virtual cppAbstractObject* createObject(void) = 0;
@@ -70,10 +70,10 @@ public:
 class cppAbstractObject : public QObject
 {
 public:
-    explicit cppAbstractObject(void) {;};
+    explicit cppAbstractObject(void) {;}
 
 public:
-    virtual ~cppAbstractObject(void) {;};
+    virtual ~cppAbstractObject(void) {;}
 
 public:
     virtual QString description(void) = 0;

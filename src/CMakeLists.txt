@@ -18,10 +18,14 @@
 ## #################################################################
 
 set(${PROJECT_NAME}_HEADERS
-    cppAbstractFactory.h)
+    cppAbstractFactory.h
+    cppIterator.h
+    cppProxy.h)
 
 set(${PROJECT_NAME}_SOURCES
-    cppAbstractFactory.cpp)
+    cppAbstractFactory.cpp
+    cppIterator.cpp
+    cppProxy.cpp)
 
 ## #################################################################
 ## Build rules
